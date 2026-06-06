@@ -1,10 +1,11 @@
-"use client"
+"use client";
 // import { useEffect, useState } from 'react';
-import './App.css';
-import {BrowserRouter, Link, Route, Routes} from 'react-router-dom'
-import Home from './pages/Home';
-import About from './pages/About';
-import Users from './pages/Users';
+import "./App.css";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+// import Home from './pages/Home';
+// import About from './pages/About';
+// import Users from './pages/Users';
+import Login from "./pages/Login";
 
 export default function App() {
   // const [users, SetUsers] = useState([])
@@ -36,21 +37,37 @@ export default function App() {
   //   </div>
   // );
 
-  return(
-    <BrowserRouter >
-     <nav className="bg-blue-600 p-4 flex gap-4">
-        <Link to="/" className="text-white font-bold">Home</Link>
-        <Link to="/about" className="text-white font-bold">About</Link>
-        <Link to="/users" className="text-white font-bold">Users</Link>
-      </nav>
+  // return(
+  //   <BrowserRouter >
+  //    <nav className="bg-blue-600 p-4 flex gap-4">
+  //       <Link to="/" className="text-white font-bold">Home</Link>
+  //       <Link to="/about" className="text-white font-bold">About</Link>
+  //       <Link to="/users" className="text-white font-bold">Users</Link>
+  //     </nav>
 
-       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/users" element={<Users />} />
-      </Routes>
-    </BrowserRouter>
-  )
-} 
+  //      <Routes>
+  //       <Route path="/" element={<Home />} />
+  //       <Route path="/about" element={<About />} />
+  //       <Route path="/users" element={<Users />} />
+  //     </Routes>
+  //   </BrowserRouter>
+  // )
 
+  return (
+    <>
+      <BrowserRouter>
+        <nav className="bg-gray-800 p-4">
+          <Link to="/login" className="text-white font-bold">
+            Login руу шилжих
+          </Link>
+        </nav>
 
+        <div className="container mx-auto p-4">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </>
+  );
+}
